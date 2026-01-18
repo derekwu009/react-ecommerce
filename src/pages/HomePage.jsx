@@ -1,7 +1,7 @@
-import Header from "../components/Header.jsx";
+import { Header } from "../components/Header.jsx";
 import "./HomePage.css";
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <>
       <Header />
@@ -11,5 +11,3 @@ const HomePage = () => {
     </>
   );
 };
-
-export default HomePage;

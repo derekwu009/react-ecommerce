@@ -6,10 +6,19 @@
 
 ## Features:
 
-- [ ] Display grid with images, prices, and descriptions
+- [x] Header
+  - [x] Logo
+  - [x] Search bar
+  - [x] Account and cart
+
+- [ ] Content
+  - [ ] Display grid with images, prices, and descriptions
+
 - [ ] Shopping Cart
-  - [ ] Add items
-  - [ ] Remove items
+- [ ] Add items
+- [ ] Remove items
 - [ ] Cart total calculation
-- [ ] Filter products by category
-- [ ] Implement search
+
+- [ ] Search
+  - [ ] Filter products by category
+  - [ ] Implement search
