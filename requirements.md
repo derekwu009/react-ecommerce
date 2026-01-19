@@ -8,7 +8,6 @@
 
 - [x] Header
   - [x] Logo
-  - [x] Search bar
   - [x] Account and cart
 
 - [ ] Content

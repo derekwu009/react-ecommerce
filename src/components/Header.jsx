@@ -1,7 +1,6 @@
 import "./Header.css";
 import { FiUsers } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
-import { FiSearch } from "react-icons/fi";
 import { Navbar } from "./Navbar";
 
 const Logo = () => {
@@ -12,46 +11,53 @@ const Logo = () => {
   );
 };
 
-const SearchBar = () => {
-  return (
-    <div className="search-container">
-      <input type="text" placeholder="Search books" autoComplete="off" />
-      <FiSearch className="search-icon" />
-    </div>
-  );
-};
-
 const User = () => {
   return (
-    <span className="user">
+    <button className="header-btn user-btn">
       <FiUsers className="user-icon" /> ACCOUNT
-    </span>
+    </button>
   );
 };
 
 const Cart = () => {
   return (
-    <span className="cart">
+    <button className="header-btn cart-btn">
       <FiShoppingCart className="cart-icon" /> CART
-    </span>
+    </button>
+  );
+};
+
+const HeaderLeft = () => {
+  return (
+    <div className="left-elements">
+      <Logo />
+    </div>
+  );
+};
+
+const HeaderMiddle = () => {
+  return (
+    <div className="middle-elements">
+      <Navbar />
+    </div>
+  );
+};
+
+const HeaderRight = () => {
+  return (
+    <div className="right-elements">
+      <User />
+      <Cart />
+    </div>
   );
 };
 
 export const Header = () => {
   return (
     <header className="header-container">
-      {/* LEFT SIDE HEADER */}
-      <div className="left-elements">
-        <Logo />
-        <Navbar />
-      </div>
-
-      {/* RIGHT SIDE HEADER */}
-      <div className="right-elements">
-        <SearchBar />
-        <User />
-        <Cart />
-      </div>
+      <HeaderLeft />
+      <HeaderMiddle />
+      <HeaderRight />
     </header>
   );
 };

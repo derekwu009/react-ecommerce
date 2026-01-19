@@ -1,60 +1,57 @@
 import "./Navbar.css";
-import { useState } from "react";
-
-const NavbarDropdownMenu = () => {
-  return (
-    <ul className="dropdown-menu">
-      <li>
-        <a href="/genres/fiction">Nonfiction</a>
-      </li>
-      <li>
-        <a href="/genres/fiction">Fiction</a>
-      </li>
-      <li>
-        <a href="/genres/fiction">Mystery</a>
-      </li>
-      <li>
-        <a href="/genres/fiction">Thriller</a>
-      </li>
-    </ul>
-  );
-};
-
-const NavbarDropdown = () => {
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
-
-  const handleMouseHover = () => {
-    setDropdownVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setDropdownVisible(false);
-  };
-
-  return (
-    <li
-      className="genres"
-      onMouseEnter={handleMouseHover}
-      onMouseLeave={handleMouseLeave}
-    >
-      <button className="genres-btn">Genres</button>
-      {isDropdownVisible && <NavbarDropdownMenu />}
-    </li>
-  );
-};
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar-container">
+    <nav className="navbar-links">
       <ul>
         <li>
-          <a href="/">Home</a>
+          <NavLink
+            to="/all-books"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            ALL BOOKS
+          </NavLink>
         </li>
-
-        <NavbarDropdown />
-
         <li>
-          <a href="/best-sellers">Best Sellers</a>
+          <NavLink
+            to="/new-arrivals"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            NEW ARRIVALS
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/best-seller"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            BEST SELLER
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/editors-pick"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            EDITORS PICK
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            ABOUT
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            CONTACT
+          </NavLink>
         </li>
       </ul>
     </nav>

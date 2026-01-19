@@ -1,21 +1,23 @@
-.navbar-container {
+.navbar-links {
   display: flex;
 }
 
-.navbar-container ul {
+.navbar-links ul {
   display: flex;
   list-style: none;
   align-items: center;
+  gap: 2rem;
 }
 
-.genres {
-  position: relative;
+.navbar-links li a:hover {
+  color: red;
 }
 
-.navbar-container .dropdown-menu {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: white;
-  border: 1px solid black;
+.navbar-links a {
+  color: black;
+}
+
+.active-link {
+  color: red;
+  font-weight: bold;
 }
