@@ -10,14 +10,15 @@
   - [x] Logo
   - [x] Account and cart
 
-- [ ] Content
-  - [ ] Display grid with images, prices, and descriptions
+- [x] Content
+  - [ ] Homepage
+    - [x] Latest books
+    - [x] Discover books
+    - [ ] Best seller
+    - [ ] Footer
 
 - [ ] Shopping Cart
 - [ ] Add items
 - [ ] Remove items
 - [ ] Cart total calculation
-
-- [ ] Search
-  - [ ] Filter products by category
-  - [ ] Implement search
+- [ ] Fix scaling
