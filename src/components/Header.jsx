@@ -1,13 +1,17 @@
 import "./Header.css";
+import logo from "../assets/forever67-logo.svg";
 import { FiUsers } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
 import { Navbar } from "./Navbar";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <div className="logo">
-      <span className="store-title">FOREVER 67</span>
-    </div>
+    <Link to="/">
+      <div className="logo">
+        <img className="logo-img" src={logo} alt="Book Store" />
+      </div>
+    </Link>
   );
 };
 
