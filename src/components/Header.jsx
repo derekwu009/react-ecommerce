@@ -5,9 +5,13 @@ import { FiShoppingCart } from "react-icons/fi";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
 
+const scrollToTop = () => {
+  window.scrollTo(top);
+};
+
 const Logo = () => {
   return (
-    <Link to="/">
+    <Link to="/" onClick={scrollToTop}>
       <div className="logo">
         <img className="logo-img" src={logo} alt="Book Store" />
       </div>
