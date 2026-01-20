@@ -4,7 +4,8 @@
 
 /* LATEST BOOKS SECTION */
 .latest-books-container {
-  background-color: #fae8cd;
+  /* background-color: #fae8cd; */
+  background-color: #f3f2ec;
   display: flex;
   height: 100vh;
   align-items: center;
@@ -25,9 +26,18 @@
   overflow-x: scroll;
   white-space: nowrap;
 }
+.latest-books-container .latest-books-heading {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: 3.5rem;
+  /* margin-top: 0; */
+}
 
 .latest-books-container .latest-books-title {
-  font-size: 1.5rem;
+  color: #afafaf;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .latest-books-container .latest-books-description {
@@ -36,13 +46,16 @@
 
 .latest-books-container .discover-now-btn {
   width: fit-content;
-  background-color: #ffc46b;
+  /* background-color: #ffc46b; */
+  background-color: inherit;
+  border: 1px solid #c5a992;
   font-size: 1.2rem;
   border-radius: 0;
 }
 
-.latest-books-heading {
-  margin-top: 0;
+.latest-books-text-container .discover-now-btn:hover {
+  border: 1px solid black;
+  background-color: lightgray;
 }
 
 /* DISCOVER BOOKS SECTION */
@@ -51,6 +64,13 @@
   flex-direction: column;
   align-items: center;
   background-color: #f8f8f8;
+  padding: 5rem 0 5rem 0;
+}
+
+.discovery-container .discovery-title {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: 3.5rem;
 }
 
 .discovery-container .discovery-heading {
@@ -74,14 +94,27 @@
 
 .discovery-container .discover-more-btn {
   justify-content: center;
-  background-color: #ffc46b;
+  /* background-color: #ffc46b; */
+  background-color: inherit;
+  border: 1px solid #c5a992;
   border-radius: 0;
   margin-bottom: 2rem;
+  margin-top: 4rem;
   font-size: 1.2rem;
+}
+
+.discovery-container .discover-more-btn:hover {
+  border: 1px solid black;
+  background-color: lightgray;
 }
 
 /* BEST-SELLING BOOK SECTION */
 .best-selling-container {
-  background-color: #edebe4;
+  /* background-color: #edebe4; */
+  background-color: #f3f2ec;
   height: 100vh;
+}
+
+.best-selling-container .best-selling-heading h1 {
+  margin: 0;
 }

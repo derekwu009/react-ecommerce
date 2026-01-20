@@ -14,7 +14,7 @@
   - [ ] Homepage
     - [x] Latest books
     - [x] Discover books
-    - [ ] Best seller
+    - [ ] Subscribe To Our Newsletter
     - [ ] Footer
 
 - [ ] Shopping Cart

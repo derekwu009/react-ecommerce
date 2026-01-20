@@ -9,15 +9,21 @@
   gap: 2rem;
 }
 
+.navbar-links li a {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .navbar-links li a:hover {
-  color: red;
+  color: #daa556;
 }
 
 .navbar-links a {
-  color: black;
+  color: #969694;
 }
 
 .active-link {
-  color: red;
+  color: #daa556;
   font-weight: bold;
 }
