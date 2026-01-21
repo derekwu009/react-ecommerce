@@ -11,11 +11,18 @@
   - [x] Account and cart
 
 - [x] Content
-  - [ ] Homepage
+  - [x] Homepage
     - [x] Latest books
     - [x] Discover books
-    - [ ] Subscribe To Our Newsletter
-    - [ ] Footer
+    - [x] Subscribe To Our Newsletter
+    - [x] Footer
+  - [ ] New Arrivals
+  - [ ] Best Seller
+  - [ ] Editor's Picks
+  - [ ] About
+  - [ ] Contact
+  - [ ] Account page
+  - [ ] Cart
 
 - [ ] Shopping Cart
 - [ ] Add items

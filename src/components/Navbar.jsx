@@ -1,9 +1,9 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ direction }) => {
   return (
-    <nav className="navbar-links">
+    <nav className={`navbar-links ${direction}`}>
       <ul>
         <li>
           <NavLink
