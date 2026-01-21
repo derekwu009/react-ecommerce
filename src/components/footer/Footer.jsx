@@ -1,6 +1,6 @@
 import "./Footer.css";
-import logo from "../assets/forever67-logo.svg";
-import { Navbar } from "./Navbar";
+import logo from "../../assets/forever67-logo.svg";
+import { Navbar } from "../navbar/Navbar";
 import { NavLink } from "react-router-dom";
 
 const LogoFooter = () => {

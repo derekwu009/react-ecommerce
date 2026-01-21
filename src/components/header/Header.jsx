@@ -1,8 +1,8 @@
 import "./Header.css";
-import logo from "../assets/forever67-logo.svg";
+import logo from "../../assets/forever67-logo.svg";
 import { FiUsers } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
-import { Navbar } from "./Navbar";
+import { Navbar } from "../navbar/Navbar";
 import { Link } from "react-router-dom";
 
 const scrollToTop = () => {
