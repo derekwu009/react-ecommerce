@@ -1,4 +1,4 @@
-import "../components/BookCard.css";
+import "./BookCard.css";
 
 export const BookImage = ({ book, size }) => {
   return (

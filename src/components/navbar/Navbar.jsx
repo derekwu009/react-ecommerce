@@ -23,10 +23,10 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/best-seller"
+            to="/best-sellers"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            BEST SELLER
+            BEST SELLERS
           </NavLink>
         </li>
         <li>
@@ -34,7 +34,7 @@ export const Navbar = ({ direction }) => {
             to="/editors-pick"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            EDITORS PICK
+            EDITOR'S PICK
           </NavLink>
         </li>
         <li>

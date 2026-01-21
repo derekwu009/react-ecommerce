@@ -1,10 +1,10 @@
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { books } from "../data/BookData";
-import { BookImageGrid, BookGrid } from "../components/BookCard";
-import { faker } from "@faker-js/faker";
-import { FiSend } from "react-icons/fi";
 import "./HomePage.css";
+import { Header } from "../../components/header/Header";
+import { Footer } from "../../components/footer/Footer";
+import { BookImageGrid, BookGrid } from "../../components/bookcard/BookCard";
+import { FiSend } from "react-icons/fi";
+import { books } from "../../data/BookData";
+import { faker } from "@faker-js/faker";
 
 export const HomePage = () => {
   return (
