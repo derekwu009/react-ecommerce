@@ -1,7 +1,11 @@
 .book-card {
-  min-width: 285px;
   display: flex;
   flex-direction: column;
+}
+
+.book-card img {
+  width: 285px;
+  height: 430px;
 }
 
 .book-card h3 {

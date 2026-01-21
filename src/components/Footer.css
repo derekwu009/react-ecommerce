@@ -1,0 +1,58 @@
+:root {
+  --container-width: 33%;
+  --active-link-color: #969694;
+  --active-link-color-hover: #daa556;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.company-brand {
+  display: flex;
+  justify-content: center;
+  width: var(--container-width);
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.quick-links-footer {
+  display: flex;
+  flex-direction: column;
+  width: var(--container-width);
+  align-items: center;
+}
+
+.quick-links-footer .quick-links-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.my-account-footer {
+  display: flex;
+  flex-direction: column;
+  width: var(--container-width);
+  align-items: center;
+}
+
+.my-account-footer .my-account-wrapper a {
+  color: var(--active-link-color);
+  font-family: Georgia, serif;
+  font-weight: 100;
+}
+
+.my-account-footer .my-account-wrapper a:hover {
+  color: var(--active-link-color-hover);
+}
+
+.my-account-footer .my-account-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}

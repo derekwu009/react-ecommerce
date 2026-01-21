@@ -1,11 +1,20 @@
+:root {
+  --main-bg: #f3f2ec;
+  --secondary-bg: #f8f8f8;
+  --font-weight-main: 500;
+  --font-weight-bold: 600;
+  --text-color: #969696;
+  --button-border: #c5a992;
+  --main-font: Georgia, serif;
+}
+
 .books {
   display: grid;
 }
 
 /* LATEST BOOKS SECTION */
 .latest-books-container {
-  /* background-color: #fae8cd; */
-  background-color: #f3f2ec;
+  background-color: var(--main-bg);
   display: flex;
   height: 100vh;
   align-items: center;
@@ -27,8 +36,8 @@
   white-space: nowrap;
 }
 .latest-books-container .latest-books-heading {
-  font-family: Georgia, serif;
-  font-weight: 500;
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-main);
   font-size: 3.5rem;
   /* margin-top: 0; */
 }
@@ -37,7 +46,7 @@
   color: #afafaf;
   text-transform: uppercase;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-main);
 }
 
 .latest-books-container .latest-books-description {
@@ -48,7 +57,7 @@
   width: fit-content;
   /* background-color: #ffc46b; */
   background-color: inherit;
-  border: 1px solid #c5a992;
+  border: 1px solid var(--button-border);
   font-size: 1.2rem;
   border-radius: 0;
 }
@@ -63,13 +72,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: var(--secondary-bg);
   padding: 5rem 0 5rem 0;
 }
 
 .discovery-container .discovery-title {
-  font-family: Georgia, serif;
-  font-weight: 500;
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-main);
   font-size: 3.5rem;
 }
 
@@ -86,9 +95,9 @@
 
 .discovery-container .discovery-books {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  justify-content: center;
+  justify-items: center;
   margin-bottom: 2rem;
 }
 
@@ -96,7 +105,7 @@
   justify-content: center;
   /* background-color: #ffc46b; */
   background-color: inherit;
-  border: 1px solid #c5a992;
+  border: 1px solid var(--button-border);
   border-radius: 0;
   margin-bottom: 2rem;
   margin-top: 4rem;
@@ -108,13 +117,85 @@
   background-color: lightgray;
 }
 
-/* BEST-SELLING BOOK SECTION */
-.best-selling-container {
-  /* background-color: #edebe4; */
-  background-color: #f3f2ec;
-  height: 100vh;
+/* SUBSCRIBE TO NEWSLETTER */
+.newsletter-container {
+  font-family: var(--main-font);
+  display: flex;
+  background-color: var(--main-bg);
+  align-items: center;
+  padding: 10rem 20rem 10rem 20rem;
 }
 
-.best-selling-container .best-selling-heading h1 {
+.newsletter-container .newsletter-heading {
+  width: 50%;
+}
+
+.newsletter-container .newsletter-heading h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-main);
   margin: 0;
+}
+
+.newsletter-container .newsletter-heading h1::after {
+  content: "";
+  border-bottom: 5px solid black;
+  display: block;
+  width: 4rem;
+  margin-top: 0.5rem;
+}
+
+.newsletter-container .newsletter-content {
+  width: 50%;
+  color: var(--text-color);
+  border-bottom: 1px solid black;
+  margin-left: 5rem;
+}
+
+.newsletter-container .email-container input {
+  flex: 1;
+  border: none;
+  background-color: inherit;
+  font-size: 1rem;
+}
+
+.newsletter-container .email-container input:focus {
+  outline: none;
+}
+
+.newsletter-container .email-container button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: var(--font-weight-bold);
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+}
+
+button {
+  transition: background-color 0.5s;
+}
+
+.newsletter-container .email-container button:hover {
+  background-color: lightgray;
+}
+
+.newsletter-container .email-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+/* FOOTER */
+footer {
+  font-family: var(--main-font);
+}
+
+footer h1 {
+  font-weight: var(--font-weight-main);
+}
+
+footer a {
+  font-weight: 100;
 }

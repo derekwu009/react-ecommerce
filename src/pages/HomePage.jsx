@@ -1,7 +1,9 @@
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { books } from "../data/BookData";
 import { BookImageGrid, BookGrid } from "../components/BookCard";
 import { faker } from "@faker-js/faker";
+import { FiSend } from "react-icons/fi";
 import "./HomePage.css";
 
 export const HomePage = () => {
@@ -30,9 +32,9 @@ export const HomePage = () => {
         <section className="discovery">
           <div className="discovery-container">
             <div className="discovery-heading">
-              <h1 className="discovery-title">Discover Your New Book</h1>
+              <h1 className="discovery-title">Discover New Books!</h1>
               <div className="discovery-description">
-                {faker.lorem.sentences(3)}
+                Want something new to read? Give these a try!
               </div>
             </div>
 
@@ -43,19 +45,32 @@ export const HomePage = () => {
           </div>
         </section>
 
-        <section className="best-selling-book">
-          <div className="best-selling-container">
-            <div className="best-selling-heading">
-              <h1>Best Selling Book</h1>
+        <section className="newsletter">
+          <div className="newsletter-container">
+            <div className="newsletter-heading">
+              <h1>Subscribe To Our Newsletter</h1>
             </div>
-            <div className="best-seller"></div>
+
+            <div className="newsletter-content">
+              <p>{faker.lorem.sentences(3)}</p>
+
+              <form id="email-form">
+                <div className="email-container">
+                  <label htmlFor="email"></label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address here"
+                  />
+                  <button type="submit">
+                    Send <FiSend className="send-btn" />
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
-        <section className="subscribe">
-          <p>Subscribe</p>
-        </section>
-        {/* ADD A FOOTER HERE */}
       </section>
+      <Footer />
     </>
   );
 };

@@ -46,7 +46,7 @@ const HeaderLeft = () => {
 const HeaderMiddle = () => {
   return (
     <div className="middle-elements">
-      <Navbar />
+      <Navbar direction="horizontal" />
     </div>
   );
 };
