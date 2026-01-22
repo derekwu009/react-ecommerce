@@ -55,7 +55,6 @@
 
 .latest-books-container .discover-now-btn {
   width: fit-content;
-  /* background-color: #ffc46b; */
   background-color: inherit;
   border: 1px solid var(--button-border);
   font-size: 1.2rem;
@@ -99,6 +98,14 @@
   gap: 2rem;
   justify-items: center;
   margin-bottom: 2rem;
+}
+
+.book-card .title {
+  overflow-wrap: break-word;
+}
+
+.book-card {
+  max-width: 285px;
 }
 
 .discovery-container .discover-more-btn {
@@ -155,7 +162,7 @@
   flex: 1;
   border: none;
   background-color: inherit;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .newsletter-container .email-container input:focus {

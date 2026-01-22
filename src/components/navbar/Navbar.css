@@ -49,7 +49,6 @@
   color: var(--active-link-color);
 }
 
-.active-link {
-  color: var(--active-link-color);
-  font-weight: bold;
+.navbar-links a.active-link {
+  color: var(--active-link-color-hover);
 }

@@ -4,9 +4,9 @@
   border-bottom: 1px solid BLACK;
   top: 0;
   position: sticky;
-  background: #f3f2ec;
+  background: #f8f8f8;
   padding: 0 5rem;
-  max-height: 5rem;
+  max-height: 7rem;
 }
 
 .logo {

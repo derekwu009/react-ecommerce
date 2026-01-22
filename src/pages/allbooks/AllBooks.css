@@ -1,0 +1,35 @@
+:root {
+  --main-bg: #f3f2ec;
+  --secondary-bg: #f8f8f8;
+  --font-weight-main: 500;
+  --font-weight-bold: 600;
+  --text-color: #969696;
+  --text-color-highlight: #daa556;
+  --button-border: #c5a992;
+  --main-font: Georgia, serif;
+}
+
+.site-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--main-bg);
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  max-width: 285px;
+}
+
+.book-card .title {
+  overflow-wrap: break-word;
+}

@@ -5,8 +5,19 @@ import { BookImageGrid, BookGrid } from "../../components/bookcard/BookCard";
 import { FiSend } from "react-icons/fi";
 import { books } from "../../data/BookData";
 import { faker } from "@faker-js/faker";
+import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
+  const navigate = useNavigate();
+  const handleNavigate = (path) => {
+    navigate(path);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  };
+
   return (
     <>
       <Header />
@@ -21,7 +32,12 @@ export const HomePage = () => {
               <div className="latest-books-description">
                 {faker.lorem.sentences(3)}
               </div>
-              <button className="discover-now-btn">Discover Now</button>
+              <button
+                className="discover-now-btn"
+                onClick={() => handleNavigate("/best-sellers")}
+              >
+                Discover Now
+              </button>
             </div>
             <div className="latest-books">
               <BookImageGrid books={books.slice(0, 10)} />
@@ -41,7 +57,12 @@ export const HomePage = () => {
             <div className="discovery-books">
               <BookGrid books={books.slice(10, 10 + 8)} />
             </div>
-            <button className="discover-more-btn">Discover More Books</button>
+            <button
+              className="discover-more-btn"
+              onClick={() => handleNavigate("/all-books")}
+            >
+              Discover More Books
+            </button>
           </div>
         </section>
 

@@ -1,0 +1,25 @@
+.breadcrumbs {
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-main);
+  color: var(--text-color);
+  margin: 0.67em 0;
+}
+
+.breadcrumbs a {
+  color: var(--text-color);
+}
+
+.breadcrumbs a:hover {
+  color: var(--text-color-highlight);
+}
+
+.header-wrapper {
+  margin: 5rem 0 5rem 0;
+}
+
+.header-wrapper h1 {
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-main);
+  font-size: 3.5rem;
+  color: black;
+}
