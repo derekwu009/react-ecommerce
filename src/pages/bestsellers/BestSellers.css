@@ -1,0 +1,17 @@
+.best-selling-books {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  max-width: 285px;
+}
+
+.book-card .title {
+  overflow-wrap: break-word;
+}

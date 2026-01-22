@@ -15,14 +15,6 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/new-arrivals"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-          >
-            NEW ARRIVALS
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/best-sellers"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
@@ -31,10 +23,10 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/editors-pick"
+            to="/editors-choice"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            EDITOR'S PICK
+            EDITOR'S CHOICE
           </NavLink>
         </li>
         <li>

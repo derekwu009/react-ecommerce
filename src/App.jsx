@@ -1,9 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./pages/homepage/HomePage";
-import { NewArrivals } from "./pages/newarrivals/NewArrivals";
 import { AllBooks } from "./pages/allbooks/AllBooks";
 import { BestSellers } from "./pages/bestsellers/BestSellers";
-import { EditorsPicks } from "./pages/editorspicks/EditorsPicks";
+import { EditorsChoice } from "./pages/editorschoice/EditorsChoice";
 import { About } from "./pages/about/About";
 import { Contact } from "./pages/contact/Contact";
 
@@ -11,10 +10,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
-  },
-  {
-    path: "/new-arrivals",
-    element: <NewArrivals />,
   },
   {
     path: "/all-books",
@@ -25,8 +20,8 @@ const router = createBrowserRouter([
     element: <BestSellers />,
   },
   {
-    path: "/editors-pick",
-    element: <EditorsPicks />,
+    path: "/editors-choice",
+    element: <EditorsChoice />,
   },
   {
     path: "/about",
@@ -39,7 +34,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
