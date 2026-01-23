@@ -15,3 +15,8 @@
 .book-card .title {
   overflow-wrap: break-word;
 }
+
+.best-selling-books .book-card p.desc {
+  display: none;
+  max-height: 0;
+}

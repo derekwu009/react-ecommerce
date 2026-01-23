@@ -5,31 +5,37 @@ import { BestSellers } from "./pages/bestsellers/BestSellers";
 import { EditorsChoice } from "./pages/editorschoice/EditorsChoice";
 import { About } from "./pages/about/About";
 import { Contact } from "./pages/contact/Contact";
+import { Layout } from "./components/layout/Layout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/all-books",
-    element: <AllBooks />,
-  },
-  {
-    path: "/best-sellers",
-    element: <BestSellers />,
-  },
-  {
-    path: "/editors-choice",
-    element: <EditorsChoice />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "all-books",
+        element: <AllBooks />,
+      },
+      {
+        path: "best-sellers",
+        element: <BestSellers />,
+      },
+      {
+        path: "editors-choice",
+        element: <EditorsChoice />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+    ],
   },
 ]);
 

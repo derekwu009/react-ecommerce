@@ -8,7 +8,6 @@ import { books } from "../../data/BookData";
 export const BestSellers = () => {
   return (
     <>
-      <Header />
       <section className="best-sellers">
         <div className="site-content">
           <div className="best-sellers-container">
@@ -19,7 +18,6 @@ export const BestSellers = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

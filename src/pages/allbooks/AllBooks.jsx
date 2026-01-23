@@ -8,18 +8,16 @@ import { books } from "../../data/BookData";
 export const AllBooks = () => {
   return (
     <>
-      <Header />
       <section className="all-books">
         <div className="site-content">
           <div className="all-books-container">
             <BreadCrumbs page="All Books" />
             <div className="books-grid">
-              <BookGrid books={books} />
+              <BookGrid books={books} coverWidth="258" coverHeight="430" />
             </div>
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

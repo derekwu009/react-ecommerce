@@ -39,7 +39,6 @@
   font-family: var(--main-font);
   font-weight: var(--font-weight-main);
   font-size: 3.5rem;
-  /* margin-top: 0; */
 }
 
 .latest-books-container .latest-books-title {
@@ -53,15 +52,22 @@
   margin-bottom: 2rem;
 }
 
-.latest-books-container .discover-now-btn {
+.discover-now-btn,
+.discover-more-btn {
+  display: inline-block;
   width: fit-content;
   background-color: inherit;
   border: 1px solid var(--button-border);
-  font-size: 1.2rem;
   border-radius: 0;
+  font-size: 0.9rem;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
 }
 
-.latest-books-text-container .discover-now-btn:hover {
+.discover-now-btn:hover,
+.discover-more-btn:hover {
+  color: black;
   border: 1px solid black;
   background-color: lightgray;
 }
@@ -117,6 +123,7 @@
   margin-bottom: 2rem;
   margin-top: 4rem;
   font-size: 1.2rem;
+  transition: background-color 0.5s;
 }
 
 .discovery-container .discover-more-btn:hover {
@@ -178,10 +185,6 @@
   background-color: inherit;
   border: none;
   border-radius: 0;
-}
-
-button {
-  transition: background-color 0.5s;
 }
 
 .newsletter-container .email-container button:hover {

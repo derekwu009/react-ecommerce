@@ -33,3 +33,8 @@
 .book-card .title {
   overflow-wrap: break-word;
 }
+
+.books-grid p.desc {
+  display: none;
+  max-height: 0;
+}

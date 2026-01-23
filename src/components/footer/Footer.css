@@ -43,8 +43,11 @@ img {
 
 .my-account-footer .my-account-wrapper a {
   color: var(--active-link-color);
-  font-family: Georgia, serif;
-  font-weight: 100;
+  font-family: serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 }
 
 .my-account-footer .my-account-wrapper a:hover {

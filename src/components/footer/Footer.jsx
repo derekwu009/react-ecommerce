@@ -27,7 +27,7 @@ const MyAccount = () => {
     <div className="my-account-footer">
       <div className="my-account-wrapper">
         <h1>My Account</h1>
-        <NavLink to="/cart">View Cart</NavLink>
+        <NavLink to="cart">View Cart</NavLink>
       </div>
     </div>
   );
