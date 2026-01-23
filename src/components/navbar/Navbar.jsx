@@ -7,7 +7,7 @@ export const Navbar = ({ direction }) => {
       <ul>
         <li>
           <NavLink
-            to="/all-books"
+            to="all-books"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             ALL BOOKS
@@ -15,7 +15,7 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/best-sellers"
+            to="best-sellers"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             BEST SELLERS
@@ -23,7 +23,7 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/editors-choice"
+            to="editors-choice"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             EDITOR'S CHOICE
@@ -31,7 +31,7 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/about"
+            to="about"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             ABOUT
@@ -39,7 +39,7 @@ export const Navbar = ({ direction }) => {
         </li>
         <li>
           <NavLink
-            to="/contact"
+            to="contact"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             CONTACT

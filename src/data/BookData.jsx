@@ -9,5 +9,6 @@ export const books = Array.from({ length: 67 }).map(() => ({
   isbn: faker.commerce.isbn(),
   price: faker.commerce.price({ min: 15, max: 30, symbol: "$" }),
   rating: faker.number.float({ min: 4, max: 5, fractionDigits: 2 }),
+  desc: faker.lorem.sentences(20),
   cover: "https://placehold.co/285x430?text=Book+Cover",
 }));

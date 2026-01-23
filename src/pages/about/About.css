@@ -1,0 +1,6 @@
+.about-contents {
+  display: flex;
+  flex-direction: column;
+  width: 1236px;
+  margin-bottom: 5rem;
+}
