@@ -32,3 +32,5 @@
 - [ ] Remove items
 - [ ] Cart total calculation
 - [ ] Fix scaling
+- [ ] Restructure folder
+- [ ] Backend
