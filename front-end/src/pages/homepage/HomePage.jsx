@@ -23,7 +23,7 @@ export const HomePage = () => {
               {faker.lorem.sentences(3)}
             </div>
 
-            <Link to="all-books" className="discover-now-btn">
+            <Link to="best-sellers" className="discover-now-btn">
               Discover Now
             </Link>
           </div>

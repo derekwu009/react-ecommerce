@@ -16,7 +16,7 @@
 .latest-books-container {
   background-color: var(--main-bg);
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 5.5rem);
   align-items: center;
 }
 
