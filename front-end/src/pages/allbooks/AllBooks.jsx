@@ -1,11 +1,13 @@
 import "./AllBooks.css";
-import { Header } from "../../components/header/Header";
-import { Footer } from "../../components/footer/Footer";
 import { BookGrid } from "../../components/bookcard/BookCard";
 import { BreadCrumbs } from "../../components/breadcrumbs/Breadcrumbs";
-import { books } from "../../data/BookData";
+import { useBooks } from "../../services/booksService";
 
 export const AllBooks = () => {
+  const { books, loading, err } = useBooks();
+  if (loading) return <p>Loading books...</p>;
+  if (err) return <p>{err}</p>;
+
   return (
     <>
       <section className="all-books">
@@ -13,7 +15,7 @@ export const AllBooks = () => {
           <div className="all-books-container">
             <BreadCrumbs page="All Books" />
             <div className="books-grid">
-              <BookGrid books={books} coverWidth="258" coverHeight="430" />
+              <BookGrid books={books} />
             </div>
           </div>
         </div>

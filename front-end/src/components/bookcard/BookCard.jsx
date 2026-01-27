@@ -17,13 +17,19 @@ export const BookPrice = ({ price }) => {
   return <span className="price">{price}</span>;
 };
 
-export const BookCover = ({ book, size }) => {
+export const BookCover = ({ book }) => {
   return (
     <img
       className="book-cover"
       src={book.cover}
       alt={book.title}
-      style={{ width: size.width, height: size.height, objectFit: "cover" }}
+      style={{ objectFit: "fill" }}
+      onLoad={(e) => {
+        const img = e.currentTarget;
+        if (img.naturalWidth == 1 || img.naturalHeight == 1) {
+          img.src = "https://placehold.co/285x430?text=No+Cover";
+        }
+      }}
     />
   );
 };
@@ -36,23 +42,16 @@ export const BookCoverGrid = ({ books }) => {
   return (
     <>
       {books.map((book) => (
-        <BookCover
-          key={book.id}
-          book={book}
-          size={{ width: 350, height: 500 }}
-        />
+        <BookCover key={book.id} book={book} />
       ))}
     </>
   );
 };
 
-export const BookCard = ({ book, coverWidth, coverHeight }) => {
+export const BookCard = ({ book }) => {
   return (
     <div className="book-card">
-      <BookCover
-        book={book}
-        size={{ width: coverWidth, height: coverHeight }}
-      />
+      <BookCover book={book} />
       <BookTitle heading="h3" title={book.title} />
       <BookAuthor author={book.author} />
       <BookPrice price={book.price} />
@@ -60,16 +59,11 @@ export const BookCard = ({ book, coverWidth, coverHeight }) => {
   );
 };
 
-export const BookGrid = ({ books, coverWidth, coverHeight }) => {
+export const BookGrid = ({ books }) => {
   return (
     <>
       {books.map((book) => (
-        <BookCard
-          key={book.id}
-          book={book}
-          coverWidth={coverWidth}
-          coverHeight={coverHeight}
-        />
+        <BookCard key={book.id} book={book} />
       ))}
     </>
   );

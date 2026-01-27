@@ -7,10 +7,16 @@ import {
   BookPrice,
   BookTitle,
 } from "../../components/bookcard/BookCard";
-import { books } from "../../data/BookData";
+import { useBooks } from "../../services/booksService";
 
 export const EditorsChoice = () => {
-  const choice = books[41];
+  const { books, loading, err } = useBooks();
+  if (loading) return <p>Loading books...</p>;
+  if (err) return <p>{err}</p>;
+
+  const randomIdx = Math.floor(Math.random() * 67);
+  const book = books[randomIdx];
+
   return (
     <>
       <section className="editors-choice">
@@ -20,12 +26,12 @@ export const EditorsChoice = () => {
               <BreadCrumbs page="Editor's Choice" />
             </div>
             <div className="choice-contents">
-              <BookCover book={choice} size={{ width: 400, height: 550 }} />
+              <BookCover book={book} />
               <div className="choice-info">
-                <BookTitle heading="h1" title={choice.title} />
-                <BookAuthor author={`By ${choice.author}`} />
-                <BookPrice price={`Price: ${choice.price}`} />
-                <BookDesc desc={choice.desc} />
+                <BookTitle heading="h1" title={book.title} />
+                <BookAuthor author={`By ${book.author}`} />
+                <BookPrice price={`Price: ${book.price}`} />
+                <BookDesc desc={book.desc} />
                 <div className="cart-buttons">
                   <input type="number" defaultValue={1} min="1" max="99" />
                   <button className="add-to-cart-btn">Add to Cart</button>

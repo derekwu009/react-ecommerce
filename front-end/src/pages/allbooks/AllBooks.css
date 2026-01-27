@@ -34,6 +34,11 @@
   overflow-wrap: break-word;
 }
 
+.book-cover {
+  width: 285px;
+  height: 430px;
+}
+
 .books-grid p.desc {
   display: none;
   max-height: 0;

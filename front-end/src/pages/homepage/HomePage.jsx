@@ -1,11 +1,15 @@
 import "./HomePage.css";
 import { BookCoverGrid, BookGrid } from "../../components/bookcard/BookCard";
 import { FiSend } from "react-icons/fi";
-import { books } from "../../data/BookData";
-import { faker } from "@faker-js/faker";
 import { Link } from "react-router-dom";
+import { faker } from "@faker-js/faker";
+import { useBooks } from "../../services/booksService";
 
 export const HomePage = () => {
+  const { books, loading, err } = useBooks(0, 18);
+  if (loading) return <p>Loading books...</p>;
+  if (err) return <p>{err}</p>;
+
   return (
     <section className="content">
       <section className="latest-releases">
