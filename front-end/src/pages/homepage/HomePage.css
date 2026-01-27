@@ -52,6 +52,11 @@
   margin-bottom: 2rem;
 }
 
+.latest-books-container .latest-books img {
+  width: 350px;
+  height: 500px;
+}
+
 .discover-now-btn,
 .discover-more-btn {
   display: inline-block;
