@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     const rows = await conn.query("SELECT * FROM books ORDER BY id ASC");
 
     const books = rows.map((row) => ({
-      bookID: row.bookID,
+      id: row.id,
       title: row.title,
       author: row.author,
       rating: row.rating,
