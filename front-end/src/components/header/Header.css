@@ -54,4 +54,6 @@
 
 .header-btn:hover {
   background-color: lightgray;
+  color: black;
+  outline: 1px solid black;
 }

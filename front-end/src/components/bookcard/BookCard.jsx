@@ -1,4 +1,5 @@
 import "./BookCard.css";
+import { Link } from "react-router-dom";
 
 export const BookTitle = ({ heading, title }) => {
   const HeadingTag = heading;
@@ -17,8 +18,8 @@ export const BookPrice = ({ price }) => {
   return <span className="price">{price}</span>;
 };
 
-export const BookCover = ({ book }) => {
-  return (
+export const BookCover = ({ book, clickable = true }) => {
+  const img = (
     <img
       className="book-cover"
       src={book.cover}
@@ -26,12 +27,18 @@ export const BookCover = ({ book }) => {
       style={{ objectFit: "fill" }}
       onLoad={(e) => {
         const img = e.currentTarget;
-        if (img.naturalWidth == 1 || img.naturalHeight == 1) {
+        if (img.naturalWidth <= 1 || img.naturalHeight <= 1) {
           img.src = "https://placehold.co/285x430?text=No+Cover";
         }
       }}
     />
   );
+
+  if (!clickable) {
+    return img;
+  }
+
+  return <Link to={`/book/${book.id}`}>{img}</Link>;
 };
 
 export const BookDesc = ({ desc }) => {

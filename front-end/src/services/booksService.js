@@ -33,3 +33,27 @@ export const useBooks = (startIndex = 0, endIndex = 67) => {
 
   return { books, loading, err };
 };
+
+export const useBook = (id) => {
+  const [book, setBook] = useState();
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(null);
+
+  useEffect(() => {
+    const loadBook = async () => {
+      try {
+        const allBooks = await fetchBooks();
+        const book = allBooks.find((book) => book.id === id);
+        setBook(book);
+      } catch (err) {
+        setErr(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBook();
+  }, []);
+
+  return { book, loading, err };
+};

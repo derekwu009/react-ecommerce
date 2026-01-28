@@ -6,6 +6,9 @@ import { EditorsChoice } from "./pages/editorschoice/EditorsChoice";
 import { About } from "./pages/about/About";
 import { Contact } from "./pages/contact/Contact";
 import { Layout } from "./components/layout/Layout";
+import { ProductPage } from "./components/productpage/ProductPage";
+import { ShoppingCart } from "./pages/shopping-cart/ShoppingCart";
+import { Account } from "./pages/account/Account";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,18 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "book/:id",
+        element: <ProductPage />,
+      },
+      {
+        path: "cart",
+        element: <ShoppingCart />,
+      },
+      {
+        path: "account",
+        element: <Account />,
       },
     ],
   },

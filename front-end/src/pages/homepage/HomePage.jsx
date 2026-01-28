@@ -17,7 +17,7 @@ export const HomePage = () => {
           <div className="latest-books-text-container">
             <h2 className="latest-books-title">Latest Books</h2>
             <h1 className="latest-books-heading">
-              You're Only One Book Away From a Good Mood
+              Check out this year's hottest new books!
             </h1>
             <div className="latest-books-description">
               {faker.lorem.sentences(3)}
