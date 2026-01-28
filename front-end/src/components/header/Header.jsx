@@ -21,17 +21,17 @@ const Logo = () => {
 
 const User = () => {
   return (
-    <button className="header-btn user-btn">
+    <Link to="account" className="header-btn user-btn">
       <FiUsers className="user-icon" /> ACCOUNT
-    </button>
+    </Link>
   );
 };
 
 const Cart = () => {
   return (
-    <button className="header-btn cart-btn">
+    <Link to="cart" className="header-btn cart-btn">
       <FiShoppingCart className="cart-icon" /> CART
-    </button>
+    </Link>
   );
 };
 

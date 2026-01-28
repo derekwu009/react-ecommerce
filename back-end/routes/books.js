@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       author: row.author,
       rating: row.rating,
       price: faker.commerce.price({ min: 15, max: 30, symbol: "$" }),
-      desc: faker.lorem.sentences(20),
+      desc: faker.lorem.sentences(10),
       cover: row.isbn
         ? `https://covers.openlibrary.org/b/isbn/${row.isbn}-L.jpg`
         : "https://placehold.co/285x430?text=No+Cover",
