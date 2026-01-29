@@ -9,6 +9,7 @@ import { Layout } from "./components/layout/Layout";
 import { ProductPage } from "./components/productpage/ProductPage";
 import { ShoppingCart } from "./pages/shopping-cart/ShoppingCart";
 import { Account } from "./pages/account/Account";
+import { CartProvider } from "./components/cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -56,9 +57,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <RouterProvider router={router} />
-    </>
+    </CartProvider>
   );
 }
 
