@@ -1,0 +1,31 @@
+.page-title h1 {
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-main);
+  font-size: 3.5rem;
+  color: black;
+}
+
+.checkout h2 {
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-main);
+  font-size: 1.5rem;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 1236px;
+  margin: 5rem 0 5rem 0;
+}
+
+.checkout {
+  display: grid;
+  justify-items: right;
+  margin-top: 2rem;
+}
+
+.checkout button {
+  background-color: inherit;
+  border-color: black;
+  border-radius: 0;
+}

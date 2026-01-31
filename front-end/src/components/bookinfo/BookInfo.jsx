@@ -6,6 +6,7 @@ import {
   BookPrice,
   BookTitle,
 } from "../../components/bookcard/BookCard";
+import { CartButtons } from "../cart/CartButtons";
 
 export const BookInfo = ({ book, clickable = true }) => {
   return (
@@ -21,10 +22,7 @@ export const BookInfo = ({ book, clickable = true }) => {
                 <BookPrice price={`Price: ${book.price}`} />
               </div>
               <BookDesc desc={book.desc} />
-              <div className="cart-buttons">
-                <input type="number" defaultValue={1} min="1" max="99" />
-                <button className="add-to-cart-btn">Add to Cart</button>
-              </div>
+              <CartButtons book={book} />
             </div>
           </div>
         </div>
