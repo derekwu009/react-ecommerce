@@ -1,0 +1,48 @@
+.cart-table {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.cart-table td,
+.cart-table th {
+  text-align: left;
+  padding: 1rem;
+}
+
+.cart-table thead tr {
+  background-color: #f8f8f8;
+}
+
+.cart-table tbody tr td {
+  border-top: 1px solid #ddd;
+}
+
+.cart-table tfoot td {
+  border-top: 1px solid #ddd;
+}
+
+.cartItem-cover {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.cartItem-cover img {
+  object-fit: cover;
+}
+
+.remove-icon {
+  width: 75px;
+}
+
+.remove-icon .svg-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cart-table-footer button {
+  background-color: inherit;
+  border-color: black;
+  border-radius: 0;
+}

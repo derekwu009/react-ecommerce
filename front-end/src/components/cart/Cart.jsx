@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
   const handleRemoveFromCart = (book) => {
     const existInCart = cart.find((item) => item.id === book.id);
     if (existInCart && existInCart.quantity === 1) {
-      setCart(cart.filer((item) => item.id !== book.id));
+      setCart(cart.filter((item) => item.id !== book.id));
     } else {
       setCart(
         cart.map((item) =>
@@ -42,13 +42,18 @@ export const CartProvider = ({ children }) => {
   };
 
   const calculateTotal = () =>
-    cart.reduce((total, item) => total + item.quantity * item.price, 0);
+    cart.reduce(
+      (total, item) =>
+        total + item.quantity * Number(item.price.replace("$", "")),
+      0,
+    );
 
   const clearCart = () => setCart([]);
 
   return (
-    <CartContext.Provider
+    <CartContext
       value={{
+        cart,
         handleAddToCart,
         handleRemoveFromCart,
         calculateTotal,
@@ -56,6 +61,6 @@ export const CartProvider = ({ children }) => {
       }}
     >
       {children}
-    </CartContext.Provider>
+    </CartContext>
   );
 };
