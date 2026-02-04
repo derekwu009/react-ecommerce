@@ -1,17 +1,17 @@
 import "./ItemTable.css";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FiXCircle } from "react-icons/fi";
 import { CartContext } from "../../contexts/CartContext";
 
 export const ItemTable = () => {
-  const {
-    cart,
-    handleAddToCart,
-    handleRemoveFromCart,
-    calculateTotal,
-    clearCart,
-  } = useContext(CartContext);
+  const { cart, handleRemoveFromCart, handleUpdateQuantity, clearCart } =
+    useContext(CartContext);
+
+  const handleClearCart = () => {
+    clearCart();
+    alert("Cart cleared successfully!");
+  };
 
   return (
     <>
@@ -30,7 +30,11 @@ export const ItemTable = () => {
           {cart.map((book) => (
             <tr key={book.id} className="item-row">
               <td className="remove-icon">
-                <div className="svg-container">
+                <div
+                  className="svg-container"
+                  onClick={() => handleRemoveFromCart(book)}
+                  style={{ cursor: "pointer" }}
+                >
                   <FiXCircle />
                 </div>
               </td>
@@ -44,7 +48,10 @@ export const ItemTable = () => {
                   type="number"
                   min="1"
                   max="99"
-                  defaultValue={book.quantity}
+                  value={book.quantity}
+                  onChange={(event) =>
+                    handleUpdateQuantity(book, Number(event.target.value))
+                  }
                 />
               </td>
               <td className="cartItem-subtotal">
@@ -58,9 +65,17 @@ export const ItemTable = () => {
         </tbody>
         <tfoot>
           <tr className="cart-table-footer">
-            <td colSpan={6}>
-              <button className="update-cart-button">Update Cart</button>
-            </td>
+            {cart.length > 0 ? (
+              <td colSpan={6}>
+                <button className="clear-cart-button" onClick={handleClearCart}>
+                  Clear Cart
+                </button>
+              </td>
+            ) : (
+              <td colSpan={6}>
+                <p>Cart is empty!</p>
+              </td>
+            )}
           </tr>
         </tfoot>
       </table>
