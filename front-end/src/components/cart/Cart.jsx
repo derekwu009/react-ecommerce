@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -9,44 +8,65 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const handleStorageChange = (event) => {
+    if (event.key === "cart" && event.newValue) {
+      setCart(JSON.parse(event.newValue));
+    }
+  };
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
+  useEffect(() => {
+    window.addEventListener("storage", handleStorageChange);
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   const handleAddToCart = (book, quantity = 1) => {
     const existInCart = cart.find((item) => item.id === book.id);
     if (existInCart) {
-      setCart(
-        cart.map((item) =>
+      setCart((prevCart) =>
+        prevCart.map((item) =>
           item.id === book.id
             ? { ...item, quantity: item.quantity + quantity }
             : item,
         ),
       );
     } else {
-      setCart([...cart, { ...book, quantity }]);
+      setCart((prevCart) => [...prevCart, { ...book, quantity }]);
     }
+    alert(`${quantity} copies of ${book.title} added to cart!`);
   };
 
   const handleRemoveFromCart = (book) => {
     const existInCart = cart.find((item) => item.id === book.id);
-    if (existInCart && existInCart.quantity === 1) {
+    if (existInCart) {
       setCart(cart.filter((item) => item.id !== book.id));
-    } else {
+      alert(`Removed ${book.title} from cart!`);
+    }
+  };
+
+  const handleUpdateQuantity = (book, quantity) => {
+    const existInCart = cart.find((item) => item.id === book.id);
+    if (existInCart) {
       setCart(
         cart.map((item) =>
-          item.id === book.id ? { ...item, quantity: item.quantity - 1 } : item,
+          item.id === book.id ? { ...item, quantity: quantity } : item,
         ),
       );
     }
   };
 
-  const calculateTotal = () =>
-    cart.reduce(
-      (total, item) =>
-        total + item.quantity * Number(item.price.replace("$", "")),
+  const calculateTotal = () => {
+    const total = cart.reduce(
+      (sum, item) => sum + item.quantity * Number(item.price.replace("$", "")),
       0,
     );
+    return total.toFixed(2);
+  };
 
   const clearCart = () => setCart([]);
 
@@ -56,6 +76,7 @@ export const CartProvider = ({ children }) => {
         cart,
         handleAddToCart,
         handleRemoveFromCart,
+        handleUpdateQuantity,
         calculateTotal,
         clearCart,
       }}

@@ -46,3 +46,7 @@
   border-color: black;
   border-radius: 0;
 }
+
+.cartItem-quantity input {
+  font-size: 0.9rem;
+}
