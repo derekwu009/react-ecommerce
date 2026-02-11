@@ -4,6 +4,12 @@
 
 - Use Context API for cart state
 
+## Current Todo
+
+- [ ] Account Page
+  - [ ] Login
+  - [ ] Webpage Design
+
 ## Features:
 
 - [x] Header
@@ -25,12 +31,12 @@
   - [ ] About
   - [ ] Contact
   - [ ] Account page
-  - [ ] Cart
+  - [x] Cart
 
-- [ ] Shopping Cart
-- [ ] Add items
-- [ ] Remove items
-- [ ] Cart total calculation
+- [x] Shopping Cart
+  - [x] Add items
+  - [x] Remove items
+  - [x] Cart total calculation
+
 - [ ] Fix scaling
 - [ ] Restructure folder
-- [ ] Backend
