@@ -4,6 +4,8 @@ const express = require("express");
 const cors = require("cors");
 
 const booksRouter = require("./routes/books");
+const authRouter = require("./routes/auth");
+
 const app = express();
 
 app.use(cors());
@@ -20,5 +22,6 @@ app.get("/", async (req, res) => {
 });
 
 app.use("/api/books", booksRouter);
+app.use("/api/auth", authRouter);
 
 app.listen(PORT, () => console.log("Server running on port"));
