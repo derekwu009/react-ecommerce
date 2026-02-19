@@ -3,9 +3,8 @@ const router = express.Router();
 const pool = require("../db");
 
 router.get("/", async (req, res) => {
-  let conn;
   try {
-    conn = await pool.getConnection();
+    const conn = await pool.getConnection();
     const rows = await conn.query("SELECT * FROM users");
 
     const users = rows.map((user) => ({
