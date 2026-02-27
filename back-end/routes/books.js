@@ -4,8 +4,9 @@ const pool = require("../db");
 const { faker } = require("@faker-js/faker");
 
 router.get("/", async (req, res) => {
+  let conn;
   try {
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
     const rows = await conn.query("SELECT * FROM books ORDER BY id ASC");
 
     const books = rows.map((row) => ({
