@@ -10,6 +10,7 @@ Users can:
 - Browse available books
 - Add/remove items from a shopping cart
 - Cart state persists across sessions
+- Create an account and login
 
 The backend server and database currently run locally while the project is under active development.
 
@@ -50,6 +51,5 @@ Current limitations:
 
 Planned improvements:
 
-- Refresh token rotation
 - Search and filtering
 - Deployment

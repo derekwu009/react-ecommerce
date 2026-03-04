@@ -26,7 +26,7 @@ export const Signup = () => {
 
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
+        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
