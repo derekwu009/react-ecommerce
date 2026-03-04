@@ -1,11 +1,13 @@
-const express = require("express");
+import express from "express";
+import pool from "../db.js";
+import { faker } from "@faker-js/faker";
+
 const router = express.Router();
-const pool = require("../db");
-const { faker } = require("@faker-js/faker");
 
 router.get("/", async (req, res) => {
+  let conn;
   try {
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
     const rows = await conn.query("SELECT * FROM books ORDER BY id ASC");
 
     const books = rows.map((row) => ({
@@ -28,4 +30,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

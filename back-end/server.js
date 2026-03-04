@@ -1,27 +1,22 @@
-require("dotenv").config();
+import express from "express";
+import cors from "cors";
 
-import { signup, login } from "./src/controllers/authController";
-
-const express = require("express");
-const cors = require("cors");
-
-const booksRouter = require("./routes/books");
-const authRouter = require("./routes/auth");
-// const authRefreshRouter = require("./routes/authRefresh");
+import cookieParser from "cookie-parser";
+import booksRouter from "./routes/books.js";
+import authRouter from "./routes/auth.js";
+import userRouter from "./routes/users.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/books", booksRouter);
 app.use("/api/auth", authRouter);
-app.use("/api/auth/refresh", authRefreshRouter);
+app.use("/api/users", userRouter);
 
-app.post("/signup", signup);
-app.post("/login", login);
-
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5167;
 
 app.get("/", async (req, res) => {
   try {
@@ -31,4 +26,4 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log("Server running on port"));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
