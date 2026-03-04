@@ -10,6 +10,8 @@ import { ProductPage } from "./components/productpage/ProductPage";
 import { ShoppingCart } from "./pages/shopping-cart/ShoppingCart";
 import { Account } from "./pages/account/Account";
 import { CartProvider } from "./components/cart/Cart";
+import { AuthProvider } from "./components/auth/Auth";
+import { Signup } from "./pages/signup/Signup";
 
 const router = createBrowserRouter([
   {
@@ -51,15 +53,21 @@ const router = createBrowserRouter([
         path: "account",
         element: <Account />,
       },
+      {
+        path: "signup",
+        element: <Signup />,
+      },
     ],
   },
 ]);
 
 function App() {
   return (
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
