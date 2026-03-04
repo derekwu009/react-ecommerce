@@ -24,7 +24,8 @@ router.get("/", async (req, res) => {
 
     res.json(books);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err);
+    return res.status(500).json({ error: err.message });
   } finally {
     if (conn) conn.release();
   }

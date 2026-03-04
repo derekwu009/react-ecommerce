@@ -22,7 +22,8 @@ app.get("/", async (req, res) => {
   try {
     res.json("Connected.");
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err);
+    return res.status(500).json({ error: err.message });
   }
 });
 

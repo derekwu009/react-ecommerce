@@ -29,3 +29,9 @@
   border-color: black;
   border-radius: 0;
 }
+
+button:hover {
+  background-color: lightgray;
+  color: black;
+  border: 1px solid black;
+}

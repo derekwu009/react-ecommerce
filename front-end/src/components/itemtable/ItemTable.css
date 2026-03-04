@@ -50,3 +50,9 @@
 .cartItem-quantity input {
   font-size: 0.9rem;
 }
+
+button:hover {
+  background-color: lightgray;
+  color: black;
+  border: 1px solid black;
+}
