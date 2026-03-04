@@ -5,6 +5,9 @@ import jwt from "jsonwebtoken";
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET;
 
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
+console.log("JWT_REFRESH_SECRET:", process.env.JWT_REFRESH_SECRET);
+
 export const signup = async (req, res) => {
   const { email, username, password } = req.body;
 
@@ -40,7 +43,8 @@ export const signup = async (req, res) => {
 
     res.status(201).json({ message: "User successfully created" });
   } catch (err) {
-    res.status(500).json({ message: "Server error." });
+    console.error(err);
+    return res.status(500).json({ message: "Server error." });
   } finally {
     if (conn) conn.release();
   }
@@ -74,20 +78,20 @@ export const login = async (req, res) => {
     }
 
     const newAccessToken = jwt.sign(
-      { userId: user.user_id, userName: user.user_name },
+      { userId: Number(user.user_id), userName: user.user_name },
       JWT_SECRET,
       { expiresIn: "15m" },
     );
 
     const refreshToken = jwt.sign(
-      { userId: user.user_id, userName: user.user_name },
+      { userId: Number(user.user_id), userName: user.user_name },
       JWT_REFRESH_SECRET,
       { expiresIn: "7d" },
     );
 
     await conn.query(
       "INSERT INTO refresh_tokens (user_id, token) VALUES (?, ?)",
-      [user.user_id, refreshToken],
+      [Number(user.user_id), refreshToken],
     );
 
     res.cookie("refreshToken", refreshToken, {
@@ -102,7 +106,8 @@ export const login = async (req, res) => {
       message: "Successfully logged in.",
     });
   } catch (err) {
-    res.status(500).json({ message: "Server error." });
+    console.error(err);
+    return res.status(500).json({ message: "Server error." });
   } finally {
     if (conn) conn.release();
   }
@@ -141,6 +146,7 @@ export const refresh = async (req, res) => {
 
     return res.status(200).json({ accessToken });
   } catch {
+    console.error(err);
     return res
       .status(403)
       .json({ message: "Invalid or expired refresh token." });
@@ -164,7 +170,8 @@ export const logout = async (req, res) => {
     res.clearCookie("refreshToken");
     return res.status(200).json({ message: "Successfully logged out." });
   } catch {
-    res.status(500).json({ message: "Server error." });
+    console.error(err);
+    return res.status(500).json({ message: "Server error." });
   } finally {
     if (conn) conn.release();
   }

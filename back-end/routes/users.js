@@ -14,14 +14,15 @@ router.get("/", async (req, res) => {
     );
 
     const users = rows.map((user) => ({
-      id: user.user_id,
+      id: Number(user.user_id),
       email: user.user_email,
       username: user.user_name,
     }));
 
     res.json(users);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err);
+    return res.status(500).json({ error: err.message });
   } finally {
     if (conn) conn.release();
   }
