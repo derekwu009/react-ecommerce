@@ -1,7 +1,8 @@
-const express = require("express");
+import express from "express";
+import pool from "../db.js";
+import { faker } from "@faker-js/faker";
+
 const router = express.Router();
-const pool = require("../db");
-const { faker } = require("@faker-js/faker");
 
 router.get("/", async (req, res) => {
   let conn;
@@ -29,4 +30,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

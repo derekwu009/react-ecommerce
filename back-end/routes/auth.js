@@ -1,26 +1,16 @@
-const express = require("express");
+import express from "express";
+import {
+  signup,
+  login,
+  refresh,
+  logout,
+} from "../src/controllers/authController.js";
+
 const router = express.Router();
-const pool = require("../db");
 
-router.get("/", async (req, res) => {
-  let conn;
-  try {
-    conn = await pool.getConnection();
-    const rows = await conn.query("SELECT * FROM users");
+router.post("/signup", signup);
+router.post("/login", login);
+router.post("/refresh", refresh);
+router.post("/logout", logout);
 
-    const users = rows.map((user) => ({
-      id: user.id,
-      email: user.user_email,
-      username: user.user_name,
-      password: user.user_password,
-    }));
-
-    res.json(users);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  } finally {
-    if (conn) conn.release();
-  }
-});
-
-module.exports = router;
+export default router;
