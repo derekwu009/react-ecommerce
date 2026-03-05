@@ -129,7 +129,7 @@ export const Signup = () => {
             </button>
           </form>
 
-          {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error.message}</p>}
 
           <p className="footer" style={{ whiteSpace: "pre-wrap" }}>
             {"Already have an account? "}
