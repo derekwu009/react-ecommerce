@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-const PORT = 5167;
 export const API_BASE = import.meta.env.VITE_API_URL;
 
 const fetchBooks = async () => {
-  const res = await fetch(`${API_BASE}/api/books`);
+  const res = await fetch(`${API_BASE}/books`);
   if (!res.ok) {
     throw new Error("Failed to fetch books.");
   }
