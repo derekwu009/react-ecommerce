@@ -8,7 +8,12 @@ import userRouter from "./routes/users.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://react-ecommerce-six-lac.vercel.app/",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(cookieParser());
 
