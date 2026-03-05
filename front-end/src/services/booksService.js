@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const API_BASE = import.meta.env.VITE_API_URL;
 
 const fetchBooks = async () => {
-  const res = await fetch(`${API_BASE}/books`);
+  const res = await fetch(`${API_BASE}/api/books`);
   if (!res.ok) {
     throw new Error("Failed to fetch books.");
   }
@@ -21,7 +21,7 @@ export const useBooks = (startIndex = 0, endIndex = 67) => {
         const books = await fetchBooks();
         setBooks(books.slice(startIndex, endIndex));
       } catch (err) {
-        setErr(err);
+        setErr(err.message);
       } finally {
         setLoading(false);
       }
@@ -45,7 +45,7 @@ export const useBook = (id) => {
         const book = allBooks.find((book) => book.id === id);
         setBook(book);
       } catch (err) {
-        setErr(err);
+        setErr(err.message);
       } finally {
         setLoading(false);
       }

@@ -81,7 +81,7 @@ export const Account = () => {
             </button>
           </form>
 
-          {error && <p className="error">{error.message}</p>}
+          {error && <p className="error">{error}</p>}
 
           <p className="footer" style={{ whiteSpace: "pre-wrap" }}>
             {"Don't have an account? "}
