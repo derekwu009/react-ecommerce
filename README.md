@@ -11,8 +11,7 @@ Users can:
 - Add/remove items from a shopping cart
 - Cart state persists across sessions
 - Create an account and login
-
-The backend server and database currently run locally while the project is under active development.
+- Stay logged in on refresh
 
 ## Tech Stack
 
@@ -44,12 +43,9 @@ The backend server and database currently run locally while the project is under
 
 Current limitations:
 
-- Backend runs locally
-- No production deployment
 - Payment system not implemented
 - Login system under development
 
 Planned improvements:
 
 - Search and filtering
-- Deployment
