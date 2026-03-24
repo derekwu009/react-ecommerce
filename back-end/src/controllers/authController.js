@@ -100,6 +100,10 @@ export const login = async (req, res) => {
 
     return res.status(200).json({
       accessToken: newAccessToken,
+      user: {
+        id: Number(user.user_id),
+        user_name: user.user_name,
+      },
       message: "Successfully logged in.",
     });
   } catch (err) {
