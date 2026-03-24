@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import "./Account.css";
 
@@ -8,7 +9,8 @@ export const Account = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { login } = useContext(AuthContext);
+  const { login, user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,9 +35,11 @@ export const Account = () => {
         return;
       }
 
-      login(data.accessToken);
+      login(data);
+      navigate("/");
 
       console.log("Access Token:", data.accessToken);
+      console.log("User: ", data.user);
     } catch (err) {
       console.error(err);
       setError("Server error");
@@ -43,6 +47,15 @@ export const Account = () => {
       setLoading(false);
     }
   };
+
+  if (user) {
+    return (
+      <section>
+        <h2>Welcome, {user.user_name}!</h2>
+        <p>You are logged in.</p>
+      </section>
+    );
+  }
 
   return (
     <section className="account-section">

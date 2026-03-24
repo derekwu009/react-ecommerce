@@ -4,6 +4,8 @@ import { FiUsers } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
 import { Navbar } from "../navbar/Navbar";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const scrollToTop = () => {
   window.scrollTo(top);
@@ -20,9 +22,12 @@ const Logo = () => {
 };
 
 const User = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <Link to="account" className="header-btn user-btn">
-      <FiUsers className="user-icon" /> ACCOUNT
+      <FiUsers className="user-icon" />{" "}
+      {user?.user_name?.toUpperCase() || "ACCOUNT"}
     </Link>
   );
 };

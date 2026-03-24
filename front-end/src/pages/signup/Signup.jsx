@@ -59,8 +59,10 @@ export const Signup = () => {
         return;
       }
 
-      login(loginData.accessToken);
+      login(loginData);
       navigate("/");
+
+      console.log("User: ", loginData.user);
     } catch (err) {
       console.error(err);
       setError("Server error.");
