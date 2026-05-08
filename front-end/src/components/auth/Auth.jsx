@@ -39,8 +39,8 @@ export const AuthProvider = ({ children }) => {
           setUser({ id: payload.userId, user_name: payload.userName });
           setAccessToken(data.accessToken);
         }
-      } catch (err) {
-        console.error("Refresh failed: ", err);
+      } catch (error) {
+        console.error("Refresh failed: ", error);
         setUser(null);
         setAccessToken(null);
       } finally {

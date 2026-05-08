@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import booksRouter from "./routes/books.js";
 import authRouter from "./routes/auth.js";
 import userRouter from "./routes/users.js";
+import cartRouter from "./routes/cart.js";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use("/api/books", booksRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
+app.use("/api/cart", cartRouter);
 
 const PORT = process.env.PORT || 5167;
 
